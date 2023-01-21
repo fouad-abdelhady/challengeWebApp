@@ -1,0 +1,119 @@
+POST https://challenge-backend.up.railway.app/registerStaff
+Content-Type: application/json
+
+{
+"firstName": "Mohamed",
+"lastName": "Abdelhady",
+"title": "Mr",
+"subjects": ["science"],
+"role": 1,
+"profileImage": "fouad.png",
+"userName": "fouad127436",
+"password": "9876543210"
+}
+
+###
+POST https://challenge-backend.up.railway.app/login
+Content-Type: application/json
+
+{
+    "userName": "fouad127436",
+    "password":"9876543210"
+}
+
+###
+POST https://challenge-backend.up.railway.app/registerStudent
+Content-Type: application/json
+
+{
+"name": "Mhamoud Abdelhady",
+"profileImage": "Ali.png",
+"classId": "123456",
+"userName": "Mahmoud127434",
+"password": "9876543211"
+}
+
+###
+POST https://challenge-backend.up.railway.app/addAnnouncement
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+    "announcement": "new announcement 10"
+}
+
+###
+POST https://challenge-backend.up.railway.app/updateAnnouncement
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+    "announcement": "updated announcement 3",
+    "id":"63ca5adb35ab4c036cef3b7f"
+}
+
+###
+POST https://challenge-backend.up.railway.app/deleteAnnouncement
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+    "id":"63ca5adb35ab4c036cef3b7f"
+}
+
+###
+### you can add "creatorId": "63c84f84ed7e3947cc7b539f" to filter based on the creator
+POST https://challenge-backend.up.railway.app/announcements
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M5Njg2YzMyMDJkOTljMjBlM2VjYzYiLCJ1c2VySWQiOiI2M2M5Njg2YjMyMDJkOTljMjBlM2VjYzQiLCJyb2xlIjoiMiIsImlhdCI6MTY3NDI5OTI3MH0.9fxWW6VUaCEvgx_gWyqkMhmDEud5AFBibibC4BOhSuY
+Content-Type: application/json
+
+{
+    "page": 1,
+    "limit":3
+}
+### 
+### classId is optional
+### note that this api gets the future quizes only
+POST https://challenge-backend.up.railway.app/quizes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+   "classId": "126"
+}
+
+###
+POST https://challenge-backend.up.railway.app/addQuiz
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+    "quizTitle": "Unit 4 Quiz",
+    "course":"Geo 02",
+    "topic": "unit 2 Mountins and hells",
+    "dueDate": "2023-07-12T00:00:00.000Z",
+    "classId": "126"
+}
+
+###
+POST https://challenge-backend.up.railway.app/updateQuiz
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+     "quizTitle": "Unit 3 Assighnment",
+     "course":"Science 02",
+     "topic": "unit 2 Motion and forces",
+     "dueDate": "2023-07-12T00:00:00.000Z",
+     "classId": "124",
+     "id":"63ca610435ab4c036cef3b8e"
+}
+
+###
+POST https://challenge-backend.up.railway.app/deleteQuiz
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2M2M4NGY4NWVkN2UzOTQ3Y2M3YjUzYTEiLCJ1c2VySWQiOiI2M2M4NGY4NGVkN2UzOTQ3Y2M3YjUzOWYiLCJyb2xlIjoiMSIsImlhdCI6MTY3NDEyMTMwM30.rM_OeA52Q_aAAn-XZm6-TLzivTu-rg1JQIADxvSZ8vI
+Content-Type: application/json
+
+{
+    "id":"63c95d2a71544583355e2f3"
+}
